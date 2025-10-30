@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "848644425485",
+    "project_id": "android-b89a0",
+    "storage_bucket": "android-b89a0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848644425485:android:f740ec64efc57e0bb25244",
+        "android_client_info": {
+          "package_name": "com.example.smarttracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC32iEn600RQ-Wc_e6WrP8idj6CdHYgskU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
