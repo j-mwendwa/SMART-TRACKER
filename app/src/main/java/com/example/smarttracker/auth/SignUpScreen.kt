@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
@@ -29,10 +30,16 @@ import androidx.room.util.TableInfo
 import com.example.smarttracker.navigation.Routes
 
 @Composable
-fun SignUpScreen (navController: NavController,viewModel: AuthViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
+fun SignUpScreen (
+    navController: NavController,
+    viewModel: AuthViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+){
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
+
+    val authState by viewModel.authstate.collectAsState()
+
 
     Column (
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -82,7 +89,7 @@ fun SignUpScreen (navController: NavController,viewModel: AuthViewModel = androi
                 }
             }
             is AuthState.error -> Text(
-                text = (authState as AuthState.error).error,
+                text = (authState as AuthState.error).message,
                 color = MaterialTheme.colorScheme.error
             )
             else -> {}

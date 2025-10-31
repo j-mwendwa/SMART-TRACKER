@@ -44,9 +44,9 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth-ktx")
+    //implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
+    //implementation("com.google.firebase:firebase-analytics")
+    //implementation("com.google.firebase:firebase-auth-ktx") remove this  if you must use remove ktx extension
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -58,10 +58,10 @@ dependencies {
     implementation(libs.androidx.navigation.common.ktx)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.common.jvm)
+//    implementation(libs.androidx.room.compiler)
+//    implementation(libs.androidx.room.common.jvm)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.auth) // use this without ktx
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -70,4 +70,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
 }
