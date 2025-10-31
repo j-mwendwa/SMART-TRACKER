@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 sealed class AuthState{
     object idle: AuthState()
@@ -57,7 +58,7 @@ class AuthViewModel: ViewModel() {
             _authstate.value = AuthState.loading
 
             try {
-                auth.signInUserWithEmailAndPassword(email, password).await()
+                auth.signInWithEmailAndPassword(email, password).await()
                 _authstate.value = AuthState.success("LOGIN SUCCESSFUL")
             }catch (e: Exception){
                 _authstate.value = AuthState.error("LOGIN FAILED")
